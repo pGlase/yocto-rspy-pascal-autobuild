@@ -1,3 +1,11 @@
 !.gitignore
 !config/
 !build.sh
+
+#ignore buildfolders
+rpi-build
+
+#ignore metalayers
+poky
+meta-raspberrypi
+meta-openembedded
