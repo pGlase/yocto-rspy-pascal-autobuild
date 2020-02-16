@@ -6,7 +6,8 @@
 #pull sources from git and make work dir
 git clone -b zeus git://git.yoctoproject.org/poky.git
 git clone -b zeus git://git.openembedded.org/meta-openembedded
-git clone -b zeus https://github.com/agherzan/meta-raspberrypi.git
+git clone -b zeus git://git.yoctoproject.org/meta-raspberrypi
+git clone -b zeus git://git.yoctoproject.org/meta-security
 . poky/oe-init-build-env rpi-build
 
 #copy default conf and setup of this pc
