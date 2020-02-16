@@ -8,11 +8,14 @@ git clone -b zeus git://git.yoctoproject.org/poky.git
 git clone -b zeus git://git.openembedded.org/meta-openembedded
 git clone -b zeus git://git.yoctoproject.org/meta-raspberrypi
 git clone -b zeus git://git.yoctoproject.org/meta-security
+git clone -b master https://github.com/pGlase/meta-pascal.git
 . poky/oe-init-build-env rpi-build
+#sourcing cds to $(pwd)/rpi-build!
 
 #copy default conf and setup of this pc
-mkdir -p $(pwd)/rpi-build/conf
-cp config/bblayers.conf rpi-build/conf
-sed -i 's?<YOCTO_PATH>?'`pwd`'?' rpi-build/conf/bblayers.conf
-cp config/local.conf rpi-build/conf
-
+cd ..
+mkdir -p rpi-build/conf
+cp $(pwd)/config/bblayers.conf $(pwd)/rpi-build/conf
+sed -i 's?<YOCTO_PATH>?'`pwd`'?' $(pwd)/rpi-build/conf/bblayers.conf
+cp $(pwd)/config/local.conf $(pwd)/rpi-build/conf
+cd rpi-build
